@@ -1,0 +1,25 @@
+{
+  "name": "mongodb-ai-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Universal MongoDB AI Assistant — connect any MongoDB database and ask natural-language questions",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "start": "npm run start -w server",
+    "lint": "npm run lint -w server && npm run lint -w client",
+    "test": "npm run test -w server",
+    "test:e2e": "npm run test:e2e -w server",
+    "seed:test": "npm run seed:test -w server"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

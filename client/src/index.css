@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-brand-50: #eef9f6;
+  --color-brand-100: #d5f1ea;
+  --color-brand-500: #0f8f7f;
+  --color-brand-600: #0d7a6c;
+  --color-brand-700: #0b6358;
+  --color-surface: #f7f8fa;
+  --color-surface-dark: #0b0f14;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body,
+.dark {
+  background: var(--color-surface-dark);
+  color: #e8eef5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4ccd6;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2a3441;
+}
+
+/* ChatGPT-like message prose */
+.chat-prose {
+  line-height: 1.65;
+  word-break: break-word;
+}
